@@ -40,6 +40,7 @@ _disableLift = _logic getvariable ["DISABLELIFT","false"];
 _disableLoad = _logic getvariable ["DISABLELOAD","false"];
 _disable3D = _logic getvariable ["DISABLE3D","false"];
 _blacklist = _logic getvariable ["BLACKLIST",""];
+_whitelist = _logic getvariable ["WHITELIST",""];
 
 waituntil {!isnil QMOD(SYS_LOGISTICS)};
 
@@ -51,6 +52,7 @@ MOD(SYS_LOGISTICS) setvariable ["DISABLETOW", _disableTow == "true", true];
 MOD(SYS_LOGISTICS) setvariable ["DISABLELIFT", _disableLift == "true", true];
 MOD(SYS_LOGISTICS) setvariable ["DISABLELOAD", _disableLoad == "true", true];
 MOD(SYS_LOGISTICS) setvariable ["DISABLE3D", _disable3D == "true", true];
-MOD(SYS_LOGISTICS) setvariable ["BLACKLIST",[_logic, "blacklist", _blacklist] call ALiVE_fnc_Logistics, true];
+MOD(SYS_LOGISTICS) setvariable ["BLACKLIST",[_logic, "buildlist", _blacklist] call ALiVE_fnc_Logistics, true];
+MOD(SYS_LOGISTICS) setVariable ["WHITELIST", [_logic, "buildlist", _whitelist] call ALiVE_fnc_Logistics, true];
 
 _logic

@@ -935,7 +935,7 @@ switch (_operation) do {
                 private ["_object"];
 
                 _object = _x;
-                if ((_x distance _position <= _radius) && {({_object iskindOf _x} count _list) > 0}) then {
+                if ((_x distance _position <= _radius) && {({_object iskindOf _x} count _list) > 0} || _x getVariable["ALiVE_SYS_LOGISTICS_ENABLE",false]) then {
                     _objects pushback _object;
                 };
             } foreach (allMissionObjects "");
@@ -1177,7 +1177,7 @@ switch (_operation) do {
             _result = _convertedData;
         };
 
-        case "blacklist": {
+        case "buildlist": {
             if !(isnil "_args") then {
                 if(typeName _args == "STRING") then {
                     if !(_args == "") then {
@@ -1192,7 +1192,7 @@ switch (_operation) do {
                             _logic setVariable [_operation, _args];
                         };
                     } else {
-                        _logic setVariable [_operation, DEFAULT_BLACKLIST];
+                        _logic setVariable [_operation, []];
                     };
                 } else {
                     if(typeName _args == "ARRAY") then {
@@ -1200,10 +1200,10 @@ switch (_operation) do {
                     };
                 };
             } else {
-                _logic setVariable [_operation, DEFAULT_BLACKLIST];
+                _logic setVariable [_operation, []];
             };
 
-            _result = _logic getVariable [_operation, DEFAULT_BLACKLIST];
+            _result = _logic getVariable [_operation, []];
         };
 
         default {

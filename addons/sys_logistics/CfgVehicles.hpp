@@ -24,7 +24,7 @@ class CfgVehicles {
         picture = "x\alive\addons\sys_logistics\icon_sys_logistics.paa";
         author = MODULE_AUTHOR;
 
-                class ModuleDescription
+        class ModuleDescription
         {
             description[] = {
                     "$STR_ALIVE_LOGISTICSDISABLE_COMMENT",
@@ -193,6 +193,12 @@ class CfgVehicles {
                                 displayName = "$STR_ALIVE_LOGISTICS_BLACKLIST";
                                 description = "$STR_ALIVE_LOGISTICS_BLACKLIST_COMMENT";
                                 defaultValue = "";
+                        };
+                        class WHITELIST
+                        {
+                                displayName = "$STR_ALIVE_LOGISTICS_WHITELIST";
+                                description = "$STR_ALIVE_LOGISTICS_WHITELIST_COMMENT";
+                                defaultValue = "";                             
                         };
                 };
         };

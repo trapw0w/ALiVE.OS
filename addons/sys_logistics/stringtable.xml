@@ -80,4 +80,10 @@
 <Key ID="STR_ALIVE_LOGISTICS_BLACKLIST_COMMENT">
     <Original>Excludes given class from any ALiVE Logistics feature (f.e. "B_Soldier_F","Land")</Original>
 </Key>
+<Key ID="STR_ALIVE_LOGISTICS_WHITELIST">
+    <Original>Whitelist:</Original>
+</Key>
+<Key ID="STR_ALIVE_LOGISTICS_BLACKLIST_COMMENT">
+    <Original>Includes a given class to allow carryable actions (f.e. "Land_Camping_Light_F","Land_PortableLight_single_F")</Original>
+</Key>
 </Container></Package></Project>
